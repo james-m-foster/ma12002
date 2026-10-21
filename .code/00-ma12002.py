@@ -6,18 +6,14 @@ import os
 
 sys.path.insert(0, os.path.expanduser("~") + "/ma12002/.code/")
 
-# Make pytest available
-import pytest
+# Make ipytest available
+import ipytest
 
 
 def run_tests():
-    """Run pytest on all tests in the current notebook"""
-    pytest.main(
+    """Run ipytest on all tests in the current notebook"""
+    ipytest.main(
         args=[
             "-v",
-            "--tb=short",
-            "--color=yes",
-            "--timeout=5",
-            "-W ignore::DeprecationWarning",
         ]
     )
