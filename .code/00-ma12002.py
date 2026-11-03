@@ -6,6 +6,18 @@ import os
 
 sys.path.insert(0, os.path.expanduser("~") + "/ma12002/.code/")
 
+import subprocess
+
+# Uninstall jupyter-pytest-2
+subprocess.run([
+    sys.executable, "-m", "pip", "uninstall", "-y", "jupyter-pytest-2"
+], check=True)
+
+# Install ipytest
+subprocess.run([
+    sys.executable, "-m", "pip", "install", "--user", "ipytest"
+], check=True)
+
 # Make pytest and ipytest available
 import pytest
 import ipytest
